@@ -11,13 +11,10 @@ object DependenciesPlugin extends AutoPlugin {
           .settings(libraryDependencies += "org.typelevel" %% "cats-effect" % Versions.catsEffect)
 
       def withTesting: Project = {
-        val weaverVersion =
-          "0.10.1"
-
         p.settings(
           libraryDependencies ++= Seq(
-            "org.typelevel" %% "weaver-cats"       % weaverVersion % Test,
-            "org.typelevel" %% "weaver-scalacheck" % weaverVersion % Test
+            "org.typelevel" %% "weaver-cats"       % Versions.weaver % Test,
+            "org.typelevel" %% "weaver-scalacheck" % Versions.weaver % Test
           )
         )
       }
